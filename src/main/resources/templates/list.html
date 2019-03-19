@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>id</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>出生日期</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="Author:${list}">
+            <td th:text="${Author.id}"></td>
+            <td th:text="${Author.name}"></td>
+            <td th:text="${Author.age}"></td>
+            <td th:text="${#dates.format(Author.time,'yyyy-MM-dd')}"></td>
+            <td><a th:href="'/springboot5/AuthorController/save?id='+${Author.id}">修改</a></td>
+        </tr>
+    </table>
+</body>
+</html>

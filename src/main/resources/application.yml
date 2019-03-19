@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /springboot5
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mydata?serverTimezone=GMT
+    driver-class-name: com.mysql.jdbc.Driver
+    data-password: accp
+    data-username: root
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.hr.springboot5.entity
+  #global-config:
+   # db-config:
+    #  id-type: auto

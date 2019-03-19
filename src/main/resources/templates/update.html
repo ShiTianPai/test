@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base th:href="${#request.getContextPath()}+'/'">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="AuthorController/update">
+        <table border="1">
+            <tr>
+                <td>id</td>
+                <td><input type="text" name="id" th:value="${author.id}"></td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td><input type="text" name="name" th:value="${author.name}"></td>
+            </tr>
+            <tr>
+                <td>年龄</td>
+                <td><input type="text" name="age" th:value="${author.age}"></td>
+            </tr>
+            <tr>
+                <td>出生日期</td>
+                <td><input type="text" name="time" th:value="${#dates.format(author.time,'yyyy-MM-dd')}"></td>
+            </tr>
+            <tr>
+                <td>提交</td>
+                <td><input type="submit" value="提交"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
