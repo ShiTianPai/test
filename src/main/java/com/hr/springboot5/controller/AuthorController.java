@@ -17,6 +17,7 @@ public class AuthorController {
     @RequestMapping("/findAll")
     public ModelAndView findAll(){
         System.out.println("进了controller");
+        System.out.println("Git测试");
         ModelAndView mv=new ModelAndView("/list");
         mv.addObject("list",authorService.findAll());
         return mv;
